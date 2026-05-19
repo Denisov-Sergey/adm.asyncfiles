@@ -1,0 +1,221 @@
+/* ========================================
+ * Компонент adm:asyncfiles.upload — Стили
+ * ======================================== */
+
+.asyncfiles-upload {
+    max-width: 640px;
+    margin: 24px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+}
+
+.asyncfiles-upload__title {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* Зона Drag & Drop */
+.asyncfiles-upload__dropzone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 32px 24px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.asyncfiles-upload__dropzone:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.asyncfiles-upload__dropzone--active {
+    border-color: #3b82f6;
+    background: #dbeafe;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.asyncfiles-upload__dropzone--has-file {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.asyncfiles-upload__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    color: #94a3b8;
+    transition: color 0.2s ease;
+}
+
+.asyncfiles-upload__dropzone:hover .asyncfiles-upload__icon {
+    color: #3b82f6;
+}
+
+.asyncfiles-upload__dropzone-text {
+    font-size: 15px;
+    color: #64748b;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.asyncfiles-upload__dropzone-text strong {
+    color: #3b82f6;
+    cursor: pointer;
+}
+
+.asyncfiles-upload__file-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Информация о выбранном файле */
+.asyncfiles-upload__file-info {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+}
+
+.asyncfiles-upload__file-info--visible {
+    display: flex;
+}
+
+.asyncfiles-upload__file-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.asyncfiles-upload__file-size {
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.asyncfiles-upload__file-remove {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: #e2e8f0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #64748b;
+    transition: background 0.15s ease;
+}
+
+.asyncfiles-upload__file-remove:hover {
+    background: #fecaca;
+    color: #dc2626;
+}
+
+/* Прогресс-бар */
+.asyncfiles-upload__progress {
+    display: none;
+    margin-top: 16px;
+}
+
+.asyncfiles-upload__progress--visible {
+    display: block;
+}
+
+.asyncfiles-upload__progress-bar-bg {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.asyncfiles-upload__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    border-radius: 4px;
+    transition: width 0.15s ease;
+}
+
+.asyncfiles-upload__progress-text {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* Кнопка отправки */
+.asyncfiles-upload__submit {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.asyncfiles-upload__submit:hover {
+    opacity: 0.92;
+}
+
+.asyncfiles-upload__submit:active {
+    transform: scale(0.98);
+}
+
+.asyncfiles-upload__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Статус-сообщение */
+.asyncfiles-upload__status {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.asyncfiles-upload__status--visible {
+    display: block;
+}
+
+.asyncfiles-upload__status--success {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.asyncfiles-upload__status--error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}

@@ -1,0 +1,11 @@
+.env
+.idea/
+*.swp
+.DS_Store
+/nbproject/
+*.log
+
+# Docker-окружение: Битрикс и данные БД
+/docker/www/*
+!/docker/www/bitrixsetup.php
+!/docker/www/.gitkeep

@@ -1,0 +1,195 @@
+/* ========================================
+ * Компонент adm:asyncfiles.list — Стили
+ * ======================================== */
+
+.asyncfiles-list {
+    margin: 24px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+}
+
+.asyncfiles-list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.asyncfiles-list__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.asyncfiles-list__refresh {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.asyncfiles-list__refresh:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.asyncfiles-list__refresh--loading {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.asyncfiles-list__refresh-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+}
+
+.asyncfiles-list__refresh--loading .asyncfiles-list__refresh-icon {
+    animation: asyncfiles-spin 1s linear infinite;
+}
+
+@keyframes asyncfiles-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Таблица */
+.asyncfiles-list__table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.asyncfiles-list__table thead {
+    background: #f8fafc;
+}
+
+.asyncfiles-list__table th {
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.asyncfiles-list__table td {
+    padding: 12px 16px;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.asyncfiles-list__table tbody tr {
+    transition: background 0.1s ease;
+}
+
+.asyncfiles-list__table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Статус-бейдж */
+.asyncfiles-list__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.asyncfiles-list__status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.asyncfiles-list__status--PENDING {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.asyncfiles-list__status--PENDING .asyncfiles-list__status-dot {
+    background: #f59e0b;
+}
+
+.asyncfiles-list__status--PROCESSING {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.asyncfiles-list__status--PROCESSING .asyncfiles-list__status-dot {
+    background: #3b82f6;
+    animation: asyncfiles-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes asyncfiles-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.asyncfiles-list__status--COMPLETED {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.asyncfiles-list__status--COMPLETED .asyncfiles-list__status-dot {
+    background: #22c55e;
+}
+
+.asyncfiles-list__status--ERROR {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.asyncfiles-list__status--ERROR .asyncfiles-list__status-dot {
+    background: #ef4444;
+}
+
+/* Ссылка на скачивание */
+.asyncfiles-list__download {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.asyncfiles-list__download:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.asyncfiles-list__download-icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Пустое состояние */
+.asyncfiles-list__empty {
+    padding: 40px 16px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Ячейка с именем файла */
+.asyncfiles-list__filename {
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
