@@ -23,6 +23,12 @@ class adm_asyncfiles extends CModule
     /** @var string Описание модуля */
     public $MODULE_DESCRIPTION;
 
+    /** @var string Имя партнера/разработчика */
+    public $PARTNER_NAME;
+
+    /** @var string Ссылка на сайт партнера/разработчика */
+    public $PARTNER_URI;
+
     /**
      * Конструктор.
      */
@@ -35,6 +41,8 @@ class adm_asyncfiles extends CModule
         $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
         $this->MODULE_NAME = 'Асинхронная загрузка файлов';
         $this->MODULE_DESCRIPTION = 'Сервис загрузки и асинхронной обработки файлов через RabbitMQ';
+        $this->PARTNER_NAME = 'addamant.ru';
+        $this->PARTNER_URI = 'https://addamant.ru';
     }
 
     /** Установка модуля. */

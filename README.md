@@ -101,7 +101,7 @@ sequenceDiagram
 #### Шаг 1. Клонирование и запуск
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Denisov-Sergey/adm.asyncfiles.git
 cd adm.asyncfiles
 docker compose up -d --build
 ```
